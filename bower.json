@@ -1,0 +1,22 @@
+{
+  "name": "githubapi",
+  "homepage": "https://github.com/basilinjoe/githubapi",
+  "description": "github api assignment",
+  "main": "app.js",
+  "moduleType": [],
+  "keywords": [
+    "githubapi",
+    "angularjs"
+  ],
+  "authors": [
+    "Basilin Joe"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
