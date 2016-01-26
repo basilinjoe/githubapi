@@ -1,0 +1,5 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/basilin/Angular/githubapi/bower_components/rxjs/modules/rx-lite-time-compat/rx.lite.time.compat.js"
+    ]
+}

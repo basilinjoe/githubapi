@@ -11,6 +11,11 @@
   </head>
 
   <body ng-controller="MainCtrl">
+      <form ng-submit="submit()">
+      <p>Input your public repo</p>
+      <input type="text" ng-model="user_in_url" required>
+          <input type="submit" name="Submit">
+      </form>
     <p>Open Issues {{issues.length}}</p>
     <div>
     </div>
