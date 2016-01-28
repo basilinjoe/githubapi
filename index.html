@@ -1,32 +1,64 @@
 <!DOCTYPE html>
-<html ng-app="gitapi">
-  <head>
-    <meta charset="utf-8" />
-    <title>AngularJS Plunker</title>
-    <script>document.write('<base href="' + document.location + '" />');</script>
-<!--    <link rel="stylesheet" href="style/style.css" />-->
-    <script src="bower_components/angular/angular.min.js"></script>
+<html lang="en" ng-app="gitapi">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Github Api Test</title>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+      <script src="bower_components/angular/angular.min.js"></script>
       <script src="bower_components/lodash/lodash.js"></script>
       <script src="bower_components/moment/moment.js"></script>
-    <script src="app.js"></script>
-  </head>
-
-  <body ng-controller="MainCtrl">
-      <form ng-submit="submit()">
-      <p>Input your public repo</p>
-      <input type="text" ng-model="user_in_url" required>
-          <input type="submit" name="Submit">
-      </form>
-      <div id="data" ng-if="issues.length">
-      <p>Open Issues {{issues.length}}</p>
-      <p>Issues Open Last day {{yesterday}}</p>
-      <p>Issues Open Last week {{pastweek}}</p>
-      <p>Issues Open Last month {{pastmonth}}</p>
+      <script src="app.js"></script>
+   </head>
+   <body ng-controller="MainCtrl">
+      <div class="container">
+      <header>
+         <div class="jumbotron">
+            <h1>Github Api Test</h1>
+            <p>Enter your githu repo url on blow textbox</p>
+         </div>
+      </header>
+      <div class="row">
+         <div class="container">
+            <div class="col-lg-12">
+               <form ng-submit="submit()">
+                  <div class="col-lg-12">
+                     <div class="input-group">
+                        <input type="text" ng-model="user_in_url" required class="form-control" placeholder="Public GitHub repository link ">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                        </span>
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <div class="row">
+               <div class="container">
+                  <!--                   <div class="col-lg-4"></div>-->
+                  <div id="data" class="col-lg-12" style="padding-top: 20px;" ng-if="!loading">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">Panel heading without title</div>
+                        <div class="panel-body">
+                           <ul class="list-group">
+                              <li class="list-group-item">Open Issues<span class="badge">{{issues.length}}</span></li>
+                              <li class="list-group-item">Issues Open Last day <span class="badge">{{yesterday}}</span></li>
+                              <li class="list-group-item">Issues Open Last week <span class="badge">{{pastweek}}</span></li>
+                              <li class="list-group-item">Issues Open Last month <span class="badge">{{pastmonth}}</span></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!--                 <div class="col-lg-4"></div>-->
+               </div>
+            </div>
+            <div id="message" class="col-lg-12" ng-if="false">
+               <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="message in message_pipe track by $index">{{message}}</li>
+               </ul>
+            </div>
+         </div>
+         </main>
       </div>
-      <div id="message" ng-if="display_messag">
-          <p ng-repeat="message in message_pipe track by $index">{{message}}</p>
-      </div>
-        <div>
-    </div>
-  </body>
+   </body>
 </html>
